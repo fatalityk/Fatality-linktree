@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Enlaces | Link Hub</title>
+
+  <!-- Iconos de FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Elemento de Audio de Fondo (Reemplaza 'mi_cancion.mp3' por tu archivo) -->
+  <audio id="musicaFondo" loop src="cancion.mp3"></audio>
+
+  <!-- Botón Flotante para la Música -->
+  <button id="btnMusica" class="music-toggle-btn" title="Activar / Pausar Música">
+    <i id="iconoMusica" class="fa-solid fa-music"></i>
+  </button>
+
+  
+
+  <main class="wrapper">
+    
+    <!-- Encabezado / Perfil -->
+    <header class="profile-card">
+      <div class="avatar-box">
+        <img src="https://media.tenor.com/aHacr-D6mfcAAAAM/laughing-cat.gif" alt="Avatar" class="avatar-img">
+      </div>
+      
+      <h1 class="profile-name">fatality<i class="fa-solid fa-sparkles spark-icon"></i></h1>
+      <p class="profile-tag">@fatalityk</p>
+      
+      <p class="profile-bio">
+        ✨ Creador digital & machirulo <br>
+        
+      </p>
+
+      <!-- Fila de Redes Sociales en la Cabecera -->
+<div class="social-row">
+  <a href="https://x.com/fatalityk_" target="_blank" class="social-btn" title="Twitter / X">
+  <span style="font-weight: 900; font-size: 1.1rem; font-family: sans-serif;">𝕏</span>
+</a>
+
+  </a>
+  <a href="https://www.instagram.com/fatalityk_?stkn=bnljYXJwd2J2bW02" target="_blank" class="social-btn" title="Instagram">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+  <a href="https://www.tiktok.com/@fatalityk_?_r=1&_t=ZS-9A6ACNgVZRt" target="_blank" class="social-btn" title="TikTok">
+    <i class="fa-brands fa-tiktok"></i>
+  </a>
+  <a href="https://youtube.com/@fatalityedits?si=CcX2jqbQh1LTY1M9" target="_blank" class="social-btn" title="YouTube">
+    <i class="fa-brands fa-youtube"></i>
+  </a>
+</div>
+
+
+    </header>
+
+    <!-- Lista de Enlaces -->
+    <section class="links-container">
+
+      <!-- Botón 1: Twitter (X) -->
+      <a href="https://x.com/i/communities/1868581544371077415" target="_blank" class="glass-btn">
+        <div class="btn-icon"><i class="fa-brands fa-x-twitter"></i></div>
+        <span class="btn-text">Comunidad de Twitter (X)</span>
+        <i class="fa-solid fa-chevron-right btn-arrow"></i>
+      </a>
+
+      <!-- Botón 2: Kick -->
+      <a href="https://kick.com/ifatality" target="_blank" class="glass-btn">
+        <div class="btn-icon">
+          <span style="font-weight: 900; font-size: 1.3rem; font-family: sans-serif;">K</span>
+        </div>
+        <span class="btn-text">Canal de Kick</span>
+        <i class="fa-solid fa-chevron-right btn-arrow"></i>
+      </a>
+
+      <!-- Botón 3: Discord -->
+      <a href="https://discord.com/channels/770465657400852480/1166292107632324618" target="_blank" class="glass-btn">
+        <div class="btn-icon"><i class="fa-brands fa-discord"></i></div>
+        <span class="btn-text">Comunidad de Discord</span>
+        <i class="fa-solid fa-chevron-right btn-arrow"></i>
+      </a>
+
+      <div class="media-box">
+  <span class="media-title"><i class="fa-solid fa-play"></i> Último vídeo</span>
+  <div class="video-wrapper">
+    <iframe 
+      id="iframeUltimoVideo" 
+      src="https://www.youtube.com/embed/videoseries?list=UUMerz5hyVZ9qVsQjbdm0lRg" 
+      title="Último vídeo" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+
+
+
+
+
+
+    </section>
+
+      <!-- Pie de página -->
+  <footer>
+    <p>© 2026 - Diseñado por joexxTWO</p>
+  </footer>
+
+  <!-- 1. Cargar el último vídeo usando la lista de reproducción (NUNCA FALLA) -->
+  <script>
+    // Asigna la playlist de tus vídeos al iframe
+    const iframe = document.getElementById('iframeUltimoVideo');
+    if (iframe) {
+      iframe.src = "https://www.youtube.com/embed/videoseries?list=UUMerz5hyVZ9qVsQjbdm0lRg";
+    }
+  </script>
+
+  <!-- 2. Control del botón de música -->
+  <script>
+    const musica = document.getElementById('musicaFondo');
+    const btn = document.getElementById('btnMusica');
+    const icono = document.getElementById('iconoMusica');
+
+    if (btn && musica) {
+      btn.addEventListener('click', () => {
+        if (musica.paused) {
+          musica.play().then(() => {
+            btn.classList.add('playing');
+            icono.className = 'fa-solid fa-volume-high';
+          }).catch(err => console.error("Error al reproducir audio:", err));
+        } else {
+          musica.pause();
+          btn.classList.remove('playing');
+          icono.className = 'fa-solid fa-music';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+
+</body>
+</html>

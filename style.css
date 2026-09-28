@@ -1,0 +1,323 @@
+/* Variables de Color */
+:root {
+  --bg-dark: #0a0912;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --primary-accent: #a855f7;
+  --text-main: #ffffff;
+  --text-muted: #a1a1aa;
+}
+
+/* Reset Global */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  /* Fondo más oscuro: capa negra al 82% sobre el GIF */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.82)), url('https://media1.tenor.com/m/0jV5gwFlwSAAAAAC/jhay-cortez-myke-towers.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  color: var(--text-main);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 30px 15px 90px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+
+
+
+
+
+/* Botón Flotante de Música */
+.music-toggle-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(168, 85, 247, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.music-toggle-btn:hover {
+  transform: scale(1.1);
+  background: rgba(168, 85, 247, 0.6);
+}
+
+.music-toggle-btn.playing {
+  background: #22c55e;
+  border-color: rgba(255, 255, 255, 0.5);
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6); }
+  70% { box-shadow: 0 0 0 14px rgba(34, 197, 94, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+/* Luces de Fondo */
+.bg-glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: -1;
+  opacity: 0.4;
+}
+
+.blur-1 {
+  background: #a855f7;
+  top: 10%;
+  left: -50px;
+}
+
+.blur-2 {
+  background: #3b82f6;
+  bottom: 20%;
+  right: -50px;
+}
+
+/* Contenedor Principal */
+.wrapper {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Perfil */
+.profile-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 24px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.avatar-box {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--primary-accent), #3b82f6);
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.spark-icon {
+  color: var(--primary-accent);
+  font-size: 1.1rem;
+}
+
+.profile-tag {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.profile-bio {
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: #e4e4e7;
+  margin-bottom: 16px;
+}
+
+.social-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--glass-border);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+  background: var(--primary-accent);
+  transform: translateY(-3px);
+}
+
+/* Enlaces */
+.links-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.glass-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  padding: 16px 20px;
+  border-radius: 16px;
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-btn:hover,
+.glass-btn:active {
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* Brillo para Twitter */
+.glass-btn[href*="x.com"]:hover,
+.glass-btn[href*="x.com"]:active {
+  border-color: #1da1f2;
+  box-shadow: 0 0 20px rgba(29, 161, 242, 0.5), inset 0 0 10px rgba(29, 161, 242, 0.2);
+}
+.glass-btn[href*="x.com"]:hover .btn-icon,
+.glass-btn[href*="x.com"]:active .btn-icon {
+  color: #1da1f2;
+  text-shadow: 0 0 10px #1da1f2;
+}
+
+/* Brillo para Kick */
+.glass-btn[href*="kick.com"]:hover,
+.glass-btn[href*="kick.com"]:active {
+  border-color: #53fc18;
+  box-shadow: 0 0 20px rgba(83, 252, 24, 0.6), inset 0 0 10px rgba(83, 252, 24, 0.2);
+}
+.glass-btn[href*="kick.com"]:hover .btn-icon,
+.glass-btn[href*="kick.com"]:active .btn-icon {
+  color: #53fc18;
+  text-shadow: 0 0 10px #53fc18;
+}
+
+/* Brillo para Discord */
+.glass-btn[href*="discord"]:hover,
+.glass-btn[href*="discord"]:active {
+  border-color: #5865f2;
+  box-shadow: 0 0 20px rgba(88, 101, 242, 0.6), inset 0 0 10px rgba(88, 101, 242, 0.2);
+}
+.glass-btn[href*="discord"]:hover .btn-icon,
+.glass-btn[href*="discord"]:active .btn-icon {
+  color: #5865f2;
+  text-shadow: 0 0 10px #5865f2;
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+  color: var(--primary-accent);
+  transition: all 0.3s ease;
+}
+
+.btn-text {
+  flex-grow: 1;
+  text-align: left;
+  margin-left: 14px;
+  font-size: 0.98rem;
+}
+
+.btn-arrow {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Vídeo */
+.media-box {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 16px;
+  text-align: left;
+}
+
+.media-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+  height: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.footer {
+  margin-top: 30px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+/* Separación para el pie de página */
+footer {
+  margin-top: 40px; /* Aumenta este valor si quieres aún más distancia */
+  text-align: center;
+  padding-bottom: 20px;
+}
